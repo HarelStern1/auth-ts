@@ -1,4 +1,5 @@
 import { FC } from "react";
+import GoogleSignInButton from "../../components/GoogleSignInButton/GoogleSignInButton";
 import Input from "../../components/Input/Input";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import Or from "../../components/Or/Or";
@@ -18,7 +19,7 @@ const Login: FC = () => {
       >
         <Title>Login</Title>
         <Accent>Enter your credentials to acces your account.</Accent>
-        <Input placeholder={"Google"} ref={undefined} type="text" />
+        <GoogleSignInButton>Sign In with Google</GoogleSignInButton>
         <Or />
         <LoginForm />
       </div>
