@@ -1,13 +1,15 @@
-import { FC } from "react";
+import { FC, forwardRef } from "react";
 import { InputProps } from ".";
 import { Container, StyledInput } from "./Input.styled";
 
-const Input: FC<InputProps> = ({ placeholder, refProp }) => {
-  return (
-    <Container>
-      <StyledInput placeholder={placeholder} ref={refProp} />
-    </Container>
-  );
-};
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ placeholder, type }, ref) => {
+    return (
+      <Container>
+        <StyledInput placeholder={placeholder} ref={ref} type={type} />
+      </Container>
+    );
+  }
+);
 
 export default Input;

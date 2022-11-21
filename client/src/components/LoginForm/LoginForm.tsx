@@ -4,6 +4,7 @@ import loginSubmit from "../../utils/api/loginSubmit";
 import Button from "../Button/Button";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
+import { CheckboxContainer } from "./LoginForm.styled";
 
 const LoginForm: FC = () => {
   const emailRef = useRef<any>(null);
@@ -17,19 +18,31 @@ const LoginForm: FC = () => {
       email: emailRef.current?.value,
       password: passwordRef.current?.value,
     };
-
+    console.log(user);
     const { accessToken } = await loginSubmit(user);
     localStorage.setItem("accessToken", accessToken);
 
     navigate("/dashboard");
   };
 
+  const togglePasswordType = () => {
+    if (passwordRef.current.type === "password") {
+      passwordRef.current.type = "text";
+    } else {
+      passwordRef.current.type = "password";
+    }
+  };
+
   return (
     <Form>
-      <Input placeholder="email" refProp={emailRef} />
-      <Input placeholder="password" refProp={passwordRef} />
-      <Button arrow varient="submit" onClick={handleSubmit}>
-        Submit
+      <Input placeholder="email" type="email" ref={emailRef} />
+      <Input placeholder="password" type="password" ref={passwordRef} />
+      <CheckboxContainer>
+        <input type="checkbox" onClick={togglePasswordType} />
+        <p>Show password</p>
+      </CheckboxContainer>
+      <Button arrow varient="primary" onClick={handleSubmit}>
+        Login to Your Account
       </Button>
       <p>
         Don't have an account? <Link to="/signup">Sign up</Link>

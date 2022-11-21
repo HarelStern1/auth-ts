@@ -2,15 +2,22 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const StyledInput = styled.input`
-  border: 1px solid gray;
-  background-color: white;
-  color: black;
-  border-radius: 2px;
-  height: 34px;
-  width: 200px;
-  padding-left: 8px;
+  border: 1px solid #e5e7e9;
+  background-color: #fff;
+  color: #000;
+  border-radius: 4px;
+  height: 46px;
+  width: 320px;
+  padding-left: 18px;
   outline: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  &::placeholder {
+    color: gray;
+  }
 `;

@@ -14,8 +14,15 @@ code {
 
 p {
   font-size: 14px;
+  margin: 10px 0;
 }
 
 a {
   text-decoration: none;
+}
+
+h1,
+h2 {
+  color: #ffffff;
+  margin: 0;
 }

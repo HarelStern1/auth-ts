@@ -29,9 +29,9 @@ const SignUpForm: FC = () => {
 
   return (
     <Form>
-      <Input placeholder="name" refProp={nameRef} />
-      <Input placeholder="email" refProp={emailRef} />
-      <Input placeholder="password" refProp={passwordRef} />
+      <Input placeholder="name" ref={nameRef} type="text" />
+      <Input placeholder="email" ref={emailRef} type="email" />
+      <Input placeholder="password" ref={passwordRef} type="password" />
       <Button onClick={handleSubmit}>Submit</Button>
       <p>
         Already have an account? <Link to="/login">Log in</Link>
