@@ -3,29 +3,20 @@ import GoogleSignInButton from "../../components/GoogleSignInButton/GoogleSignIn
 import Input from "../../components/Input/Input";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import Or from "../../components/Or/Or";
-import { Accent, Section, Title } from "./Login.styled";
+import login from "../../assets/img/9.jpg";
+import { Accent, Left, Right, Section, Title } from "./Login.styled";
 
 const Login: FC = () => {
   return (
     <Section>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          padding: "250px 200px",
-          background: "#fff",
-        }}
-      >
+      <Left>
         <Title>Login</Title>
         <Accent>Enter your credentials to acces your account.</Accent>
         <GoogleSignInButton>Sign In with Google</GoogleSignInButton>
         <Or />
         <LoginForm />
-      </div>
-      <div style={{ flex: "1" }}>
-        <p>Right</p>
-      </div>
+      </Left>
+      <Right>{/* <img src={login} height="500px" width="500px" /> */}</Right>
     </Section>
   );
 };
